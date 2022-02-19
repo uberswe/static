@@ -7,8 +7,6 @@ for production sites where I have [Caddy](https://caddyserver.com/)
 handle traffic to all sites and makes a reverse proxy to 
 the containers.
 
-[Available on Docker Hub: tenghamn/static](https://hub.docker.com/r/tenghamn/static)
-
 ## Example
 
 I have some static sites built with [Hugo](https://gohugo.io/) and I use the following Dockerfile to get them running in a container.
@@ -16,7 +14,7 @@ I have some static sites built with [Hugo](https://gohugo.io/) and I use the fol
 ```
 FROM klakegg/hugo:0.92.1-onbuild AS build
 
-FROM tenghamn/static:latest
+FROM ghcr.io/uberswe/static:main
 
 WORKDIR /app
 
