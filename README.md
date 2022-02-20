@@ -39,3 +39,22 @@ services:
     ports:
       - "8080:80"
 ```
+
+If you are using a framework like ReactJS you might want all routes that are not found to be routed to the index file. I have added the `INDEX_IF_NOT_FOUND` variable to allow you to toggle this feature on, by default it's off and a basic 404 page will be shown.
+
+```
+version: "3.9"
+
+services:
+  app:
+    container_name: app
+    image: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      INDEX_IF_NOT_FOUND: "true"
+    restart: always
+    ports:
+      - "8080:80"
+```
